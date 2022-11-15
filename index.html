@@ -22,7 +22,7 @@
         <div class="tasks-container">
             <ul v-if="taskList.length > 0">
                 <li class="task" v-for="(task, index) in taskList">
-                    {{ taskList[index].text }}
+                    <span class="text" @click="checkTask(index)">{{ taskList[index].text }}</span>
                     <i class="fas fa-times" @click="removeTask(index)"></i> 
                 </li>
             </ul>

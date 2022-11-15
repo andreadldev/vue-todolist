@@ -74,6 +74,14 @@
     top: 7px;
 }
 
+.text {
+    user-select: none;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
 .warning {
     text-align: center;
 }

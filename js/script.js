@@ -30,8 +30,20 @@ createApp({
             this.taskField = '';
             console.log(this.taskList)
         },
+
         removeTask(index) {
             this.taskList.splice(index, 1);
+        },
+
+        checkTask(index) {
+            let selectedTask = document.getElementsByClassName("text")[index];
+            selectedTask.classList.toggle('checked');
+            this.stopPropagation;
+            if (selectedTask.classList.contains('checked')) {
+                this.taskList[index].done = true
+            } else {
+                this.taskList[index].done = false
+            };
         }
     }
 }).mount('#app');
