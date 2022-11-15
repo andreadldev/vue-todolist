@@ -73,3 +73,7 @@
     position: relative;
     top: 7px;
 }
+
+.warning {
+    text-align: center;
+}
