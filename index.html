@@ -14,16 +14,16 @@
             <img src="css/img/logo.png" alt="logo">
         </div>
 
-        <form class="new-task" @submit.prevent="addTask">
-            <input type="text" placeholder="Inserisci testo to do" v-model="newTodo" required minlength="3"> 
+        <form class="new-task" @submit.prevent="addTask(taskField)">
+            <input type="text" placeholder="Inserisci testo to do" v-model="taskField" required> 
             <button type="submit">Aggiungi</button>
         </form>
 
         <div class="tasks-container">
-            <ul v-if="todoList.length > 0">
-                <li class="task" v-for="(todo, index) in todoList">
-                    {{ todo }}
-                    <i class="fas fa-times" @click="removeTask"></i> 
+            <ul v-if="taskList.length > 0">
+                <li class="task" v-for="(task, index) in taskList">
+                    {{ taskList[index].text }}
+                    <i class="fas fa-times" @click="removeTask(index)"></i> 
                 </li>
             </ul>
             <h2 v-else>Lista vuota</h2>

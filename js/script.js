@@ -3,21 +3,35 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            newTodo: '',
-            todoList: [
-                'Fare i compiti',
-                'Fare la spesa',
-                'Andare dalla nonna'
+            taskField: '',
+            taskList: [
+                {
+                    text: 'Fare i compiti',
+                    done: false
+                },
+                {
+                    text: 'Fare la spesa',
+                    done: false
+                },
+                {
+                    text: 'Andare dalla nonna',
+                    done: false
+                }
             ]
         }
     },
     methods: {
-        addTask() {
-            this.todoList.push(this.newTodo);
-            this.newTodo = '';
+        addTask(text) {
+            let newTask = {
+                text: `${text}`,
+                done: false
+            }
+            this.taskList.push(newTask);
+            this.taskField = '';
+            console.log(this.taskList)
         },
         removeTask(index) {
-            this.todoList.splice(index, 1);
+            this.taskList.splice(index, 1);
         }
     }
 }).mount('#app');
