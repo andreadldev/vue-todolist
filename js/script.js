@@ -11,7 +11,7 @@ createApp({
                 },
                 {
                     text: 'Fare la spesa',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'Andare dalla nonna',
@@ -33,16 +33,6 @@ createApp({
 
         removeTask(index) {
             this.taskList.splice(index, 1);
-        },
-
-        checkTask(index) {
-            let selectedTask = document.getElementsByClassName("text")[index];
-            selectedTask.classList.toggle('checked');
-            if (selectedTask.classList.contains('checked')) {
-                this.taskList[index].done = true
-            } else {
-                this.taskList[index].done = false
-            };
         }
     }
 }).mount('#app');
