@@ -38,7 +38,6 @@ createApp({
         checkTask(index) {
             let selectedTask = document.getElementsByClassName("text")[index];
             selectedTask.classList.toggle('checked');
-            this.stopPropagation;
             if (selectedTask.classList.contains('checked')) {
                 this.taskList[index].done = true
             } else {
